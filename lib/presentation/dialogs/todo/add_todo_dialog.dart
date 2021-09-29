@@ -39,6 +39,7 @@ class AddTodoDialog extends StatelessWidget {
                     child: Text(
                       "Add to me ",
                       style: TextStyle(
+                        color: Colors.white,
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
@@ -48,7 +49,11 @@ class AddTodoDialog extends StatelessWidget {
                     height: 14,
                   ),
                   TextField(
+                    style: const TextStyle(
+                      color: Colors.white,
+                    ),
                     controller: controller,
+                    // style: const TextStyle(color: ),
                     decoration: const InputDecoration(
                       enabledBorder: OutlineInputBorder(
                         borderSide: BorderSide(
