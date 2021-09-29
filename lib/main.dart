@@ -16,12 +16,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        textTheme: Theme.of(context).textTheme.copyWith(
-              bodyText2: Theme.of(context)
-                  .textTheme
-                  .bodyText1!
-                  .apply(color: Colors.white),
-            ),
         // dialogBackgroundColor: Color.fromRGBO(255, 255, 255, 1),
         dialogBackgroundColor: const Color.fromRGBO(9, 6, 20, 1),
         colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue)
