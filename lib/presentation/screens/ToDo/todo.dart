@@ -24,11 +24,13 @@ class Todo extends StatelessWidget {
       ),
       body: BlocBuilder<TodoCubit, TodoState>(
         builder: (context, state) {
-          if (state is ListModifiedState) {
+          if (state is ListModifiedState && todoCubit.todos.isNotEmpty) {
             return ListView.builder(
               itemCount: todoCubit.todos.length,
-              itemBuilder: (context, index) =>
-                  TodoItem(title: todoCubit.todos[index]),
+              itemBuilder: (context, index) => TodoItem(
+                title: todoCubit.todos[index],
+                index: index,
+              ),
             );
           }
           return const Center(child: Text("Oops! nothing to show :("));

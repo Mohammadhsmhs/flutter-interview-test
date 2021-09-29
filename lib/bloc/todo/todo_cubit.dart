@@ -10,4 +10,14 @@ class TodoCubit extends Cubit<TodoState> {
     todos.add(todoText);
     emit(ListModifiedState());
   }
+
+  void editTodo(String editedText, int index) {
+    todos[index] = editedText;
+    emit(ListModifiedState());
+  }
+
+  void deleteToDo(int index) {
+    todos.removeAt(index);
+    emit(ListModifiedState());
+  }
 }
