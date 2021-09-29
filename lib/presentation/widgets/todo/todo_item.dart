@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_interview_test/bloc/todo/todo_cubit.dart';
+import 'package:flutter_interview_test/domain/validators/todo_validator.dart';
 import 'package:flutter_interview_test/presentation/dialogs/todo/add_todo_dialog.dart';
 import 'package:flutter_interview_test/presentation/dialogs/todo/edit_todo_dialog.dart';
 import 'package:provider/src/provider.dart';
@@ -66,7 +67,8 @@ class _TodoItemState extends State<TodoItem> {
       isDismissible: true,
       builder: (context) => EditTodoDialog(text: todoCubit.todos[widget.index]),
     ).then((todoText) {
-      if (todoText != null) {
+      if (TodoValidator.containsSpecialCharacters(todoText) &&
+          TodoValidator.isNotEmpty(todoText)) {
         todoCubit.editTodo(todoText, widget.index);
       }
     });

@@ -54,7 +54,8 @@ class Todo extends StatelessWidget {
       isDismissible: true,
       builder: (context) => AddTodoDialog(),
     ).then((todoText) {
-      if (todoText != null) {
+      if (TodoValidator.containsSpecialCharacters(todoText) &&
+          TodoValidator.isNotEmpty(todoText)) {
         todoCubit.addTodo(todoText);
       }
     });
