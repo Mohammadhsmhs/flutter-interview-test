@@ -41,7 +41,7 @@ class Todo extends StatelessWidget {
     const radius = 20.0;
     showModalBottomSheet(
       isScrollControlled: true,
-      shape: RoundedRectangleBorder(
+      shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(radius),
           topRight: Radius.circular(radius),

@@ -16,8 +16,8 @@ class AddTodoDialog extends StatelessWidget {
               top: -32,
               right: 50,
               child: CircleAvatar(
-                backgroundColor: Theme.of(context).accentColor,
-                child: Icon(
+                backgroundColor: Theme.of(context).colorScheme.secondary,
+                child: const Icon(
                   Icons.add,
                   color: Colors.white,
                   size: 55,
@@ -34,9 +34,9 @@ class AddTodoDialog extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
+                  const Padding(
                     padding: EdgeInsets.symmetric(vertical: 15),
-                    child: const Text(
+                    child: Text(
                       "Add to me ",
                       style: TextStyle(
                         fontSize: 18,
@@ -51,7 +51,7 @@ class AddTodoDialog extends StatelessWidget {
                     controller: controller,
                     decoration: const InputDecoration(
                       enabledBorder: OutlineInputBorder(
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Colors.teal,
                           width: 1,
                         ),
@@ -73,24 +73,27 @@ class AddTodoDialog extends StatelessWidget {
                                     borderRadius: BorderRadius.circular(8)),
                                 side: BorderSide(
                                   width: 2,
-                                  color: Theme.of(context).accentColor,
+                                  color:
+                                      Theme.of(context).colorScheme.secondary,
                                 ),
-                                minimumSize: Size(70, 30),
-                                primary: Theme.of(context).accentColor),
+                                minimumSize: const Size(70, 30),
+                                primary:
+                                    Theme.of(context).colorScheme.secondary),
                             onPressed: () {
+                              // ignore: avoid_print
                               print("controller value is ${controller.text}");
                               Navigator.pop(context);
                             },
                             child: const Text("Cancel")),
-                        SizedBox(
+                        const SizedBox(
                           width: 15,
                         ),
                         ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(8)),
-                              minimumSize: Size(90, 30),
-                              primary: Theme.of(context).accentColor,
+                              minimumSize: const Size(90, 30),
+                              primary: Theme.of(context).colorScheme.secondary,
                             ),
                             onPressed: () {
                               Navigator.pop(context, controller.text);

@@ -16,8 +16,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        accentColor: Colors.teal.shade900,
         textTheme: Theme.of(context).textTheme.copyWith(
               bodyText2: Theme.of(context)
                   .textTheme
@@ -25,7 +23,9 @@ class MyApp extends StatelessWidget {
                   .apply(color: Colors.white),
             ),
         // dialogBackgroundColor: Color.fromRGBO(255, 255, 255, 1),
-        dialogBackgroundColor: Color.fromRGBO(9, 6, 20, 1),
+        dialogBackgroundColor: const Color.fromRGBO(9, 6, 20, 1),
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue)
+            .copyWith(secondary: Colors.teal.shade900),
       ),
       home: BlocProvider(
         create: (context) => TodoCubit(),
