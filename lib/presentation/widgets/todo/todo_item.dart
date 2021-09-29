@@ -67,7 +67,7 @@ class _TodoItemState extends State<TodoItem> {
       isDismissible: true,
       builder: (context) => EditTodoDialog(text: todoCubit.todos[widget.index]),
     ).then((todoText) {
-      if (TodoValidator.containsSpecialCharacters(todoText) &&
+      if (!TodoValidator.containsSpecialCharacters(todoText) &&
           TodoValidator.isNotEmpty(todoText)) {
         todoCubit.editTodo(todoText, widget.index);
       }
