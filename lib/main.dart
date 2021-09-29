@@ -15,7 +15,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(primarySwatch: Colors.blue),
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+        accentColor: Colors.teal.shade900,
+        textTheme: Theme.of(context).textTheme.copyWith(
+              bodyText2: Theme.of(context)
+                  .textTheme
+                  .bodyText1!
+                  .apply(color: Colors.white),
+            ),
+        // dialogBackgroundColor: Color.fromRGBO(255, 255, 255, 1),
+        dialogBackgroundColor: Color.fromRGBO(9, 6, 20, 1),
+      ),
       home: BlocProvider(
         create: (context) => TodoCubit(),
         child: Todo(),

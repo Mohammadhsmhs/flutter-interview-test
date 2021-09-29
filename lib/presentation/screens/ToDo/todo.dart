@@ -38,7 +38,16 @@ class Todo extends StatelessWidget {
   }
 
   void showTodoDialog(BuildContext context) {
+    const radius = 20.0;
     showModalBottomSheet(
+      isScrollControlled: true,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(radius),
+          topRight: Radius.circular(radius),
+        ),
+      ),
+      backgroundColor: Theme.of(context).dialogBackgroundColor,
       context: context,
       isDismissible: true,
       builder: (context) => AddTodoDialog(),
